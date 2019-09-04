@@ -1,0 +1,38 @@
+﻿@model MSSAdventure.Models.ContactModel
+@{
+	ViewBag.Title = "Contact";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/Forms.css" rel="stylesheet" type="text/css">
+
+<div class="imagewithcaption">
+	<img src="~/assets/images/features/climb_out_of_Wounded_Knee_JGray-400x400.jpg" alt="Exit Climb from Wounded Knee Canyon – Image:  John Gray" /><br />Exit Climb from Wounded Knee Canyon – Image:  John Gray
+</div>
+
+<h2>Contact MSS</h2>
+
+<p>Postal Address: Metropolitan Speleological Society, PO Box 178, Thornleigh, NSW 2120</p>
+
+<p><a href="mailto:membership@mssadventure.org.au">Membership Enquiries</a><br />
+	<a href="mailto:secretary@mssadventure.org.au">General enquiries</a><br />
+	or If you have any questions or comments, please fill out the form below, we’ll get back to you asap!
+</p>
+@using (Html.BeginForm("Contact", "Home", FormMethod.Post, new { enctype = "multipart/form-data", id = "contactForm" }))
+			{
+				@ViewBag.TheMessage
+				@Html.ValidationSummary(false)
+				@Html.LabelFor(model => model.Name)
+				@Html.EditorFor(model => model.Name)
+				@Html.LabelFor(model => model.Phone)
+				@Html.EditorFor(model => model.Phone)
+				@Html.LabelFor(model => model.Email)
+				@Html.EditorFor(model => model.Email)
+				@:Your thoughts are valuable...<br />&nbsp;Please make any comments here:
+				@Html.EditorFor(model => model.Thoughts)
+				@:Please enter the text in the image
+				@Html.EditorFor(model => model.ImageCode)<br />
+				<img src="@Url.Action("GetImage", "RandomImage")" />
+				<input type="submit" value="Send" />
+				@Html.ActionLink("Reset", "Contact")
+			}

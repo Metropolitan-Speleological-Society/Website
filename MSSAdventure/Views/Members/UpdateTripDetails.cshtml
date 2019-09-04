@@ -1,0 +1,32 @@
+﻿@model MSSAdventure.Models.TripModel
+
+@{
+    ViewBag.Title = "Update Trip Details";
+    Layout = "~/Views/Shared/_MemberLayout.cshtml";
+}
+
+<link href="~/Content/Forms.css" rel="stylesheet" type="text/css">
+
+<h2>Update Trip Details</h2>
+
+@using (Html.BeginForm("UpdateTripDetails", "Members", FormMethod.Post, new { enctype = "multipart/form-data", id = "personForm" }))
+{
+    @Html.ValidationSummary(false)
+    @Html.LabelFor(model => model.trip.Activity)
+    @Html.DropDownListFor(model => model.trip.Activity, new SelectList(typeof(MSS.DAL.Trip.TripActivity).GetProperties().Select(p => p.GetValue(null).ToString())), "Select Activity")
+    @Html.LabelFor(model => model.trip.GenericLocation)
+    @Html.EditorFor(model => model.trip.GenericLocation)
+    @Html.LabelFor(model => model.trip.Organisation)
+    @Html.EditorFor(model => model.trip.Organisation)
+    @Html.LabelFor(model => model.trip.TripLeader)
+    @Html.EditorFor(model => model.trip.TripLeader)
+    @Html.LabelFor(model => model.trip.Grade)
+    @Html.DropDownListFor(model => model.trip.Grade, new SelectList(typeof(MSS.DAL.Trip.TripGrade).GetProperties().Select(p => p.GetValue(null).ToString())), "Select Grade")
+    @Html.LabelFor(model => model.trip.StartDate)
+    @Html.EditorFor(model => model.trip.StartDate)
+    @Html.LabelFor(model => model.trip.EndDate)
+    @Html.EditorFor(model => model.trip.EndDate)
+    @Html.LabelFor(model => model.trip.Notes)
+    @Html.EditorFor(model => model.trip.Notes)
+    <input type="submit" value="OK" />
+}

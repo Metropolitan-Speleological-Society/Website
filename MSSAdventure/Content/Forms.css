@@ -1,0 +1,13 @@
+﻿form {
+	display: grid;
+	grid-template-columns: 200px 1fr;
+	grid-gap: 15px;
+}
+
+form label {
+	grid-column: 1 / 2;
+}
+
+form input {
+	grid-column: 2 / 3;
+}

@@ -1,0 +1,30 @@
+﻿@model MSSAdventure.Models.PersonModel
+
+@{
+    ViewBag.Title = "Update Details";
+    Layout = "~/Views/Shared/_MemberLayout.cshtml";
+}
+
+<link href="~/Content/Forms.css" rel="stylesheet" type="text/css">
+
+<h2>Details</h2>
+
+@using (Html.BeginForm("MemberDetails", "Members", FormMethod.Post, new { enctype = "multipart/form-data", id = "personForm" }))
+{
+    @Html.ValidationSummary(false)
+    @Html.LabelFor(model => model.person.FirstName)
+    @Html.EditorFor(model => model.person.FirstName)
+    @Html.LabelFor(model => model.person.MiddleNames)
+    @Html.EditorFor(model => model.person.MiddleNames)
+    @Html.LabelFor(model => model.person.Surname)
+    @Html.EditorFor(model => model.person.Surname)
+    @Html.LabelFor(model => model.person.ShowOnSite)
+    @Html.EditorFor(model => model.person.ShowOnSite)
+    @Html.LabelFor(model => model.person.CurrentStatus)
+    @Html.DropDownListFor(model => model.person.CurrentStatus, new SelectList(typeof(MSS.DAL.Person.CurrentStatuses).GetProperties().Select(p => p.GetValue(null).ToString())), "Select Status")
+    @Html.LabelFor(model => model.person.Login)
+    @Html.EditorFor(model => model.person.Login)
+    @Html.LabelFor(model => model.person.Password)
+    @Html.EditorFor(model => model.person.Password)
+    <input type="submit" value="OK" />
+}

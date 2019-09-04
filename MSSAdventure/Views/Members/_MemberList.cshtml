@@ -1,0 +1,23 @@
+﻿@model MSSAdventure.Models.MemberListModel
+
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var member in Model.People)
+		{
+			<tr>
+				<td>@(member.FirstName + " " + member.Surname)</td>
+				<td>
+					@foreach (var email in member.Emails)
+					{
+						<span>@email.EmailAddress</span><br />
+					}
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

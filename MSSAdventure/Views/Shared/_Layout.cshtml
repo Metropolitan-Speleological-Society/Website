@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+				<img src="~/assets/images/logos/Logo.png" alt="MSS Logo" />
+                @Html.ActionLink("Metropolitan Speleological Society", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            @*<div class="navbar-collapse collapse">*@
+			<div>
+				<nav class="menu">
+					<ul>
+						@*<ul class="nav navbar-nav">*@
+							<li>@Html.ActionLink("Home", "Index", "Home")</li>
+							<li>
+								@Html.ActionLink("Adventures", "Adventures", "Home")
+								<ul>
+									<li>@Html.ActionLink("Caving", "Caving", "Home")</li>
+									<li>@Html.ActionLink("Canyoning", "Canyoning", "Home")</li>
+									<li>@Html.ActionLink("Abseiling", "Abseiling", "Home")</li>
+									<li>@Html.ActionLink("Bushwalking", "Bushwalking", "Home")</li>
+									<li>@Html.ActionLink("Mountain Biking", "MountainBiking", "Home")</li>
+									<li>@Html.ActionLink("Kite Flying", "KiteFlying", "Home")</li>
+								</ul>
+							</li>
+							<li>@Html.ActionLink("Calendar", "Calendar", "Home")</li>
+							<li>@Html.ActionLink("About Us", "AboutUs", "Home")</li>
+							<li>@Html.ActionLink("How to Join", "HowToJoin", "Home")</li>
+							<li>@Html.ActionLink("Contact MSS", "Contact", "Home")</li>
+							<li>@Html.ActionLink("Members", "Login", "Home")</li>
+					</ul>
+				</nav>
+			</div>
+        </div>
+		<hr />
+    </div>
+    <div class="container body-content">
+		@RenderBody()
+		<hr style="clear:both;" />
+		<footer>
+			<p><a href="https://www.facebook.com/groups/180755365674074/" target="_blank"><img alt="Facebook" src="~/assets/images/logos/Facebook logo.jpg" height="24" width="32" /> Apply to join our Facebook Group</a></p>
+			<p>&copy; @DateTime.Now.Year</p>
+		</footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,47 @@
+﻿@model MSSAdventure.Models.LoginModel
+
+@{
+	ViewBag.Title = "Login";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/Forms.css" rel="stylesheet" type="text/css">
+
+<div class="imagewithcaption">
+	<img src="~/assets/images/features/PA140142-400x400.jpg" alt="Abseiling" /><br />Cave Surveying course at Wombeyan - 2017
+</div>
+
+<h2>Members Area</h2>
+
+<p>Log in to our Members’ area where you can access or download information such as:
+	<ul>
+		<li>Quarterly Newsletters</li>
+		<li>Members listing & contact details</li>
+		<li>Update your contact details and change your password (Coming soon)</li>
+		<li>Milestones
+			<ul>
+                <li>1965 - 2015 – Our 50th Anniversary, photos and publication</li>
+                <li>1965 - 1995 – Our 30th Anniversary publication (Coming soon)</li>
+			</ul>
+		</li>
+        <li>MSS Merchandising</li>
+		<li>Directions to places we go</li>
+		<li>Discounts from retailers</li>
+        <li>List of Library books (Coming soon)</li>
+		<li>Trip Leader’s checklist</li>
+        <li>MSS Constitution (Coming soon)</li>
+	</ul>
+</p>
+
+@using (Html.BeginForm())
+{
+				@Html.ValidationSummary(true, "Log in was unsuccessful. Please correct the errors and try again.")
+							@Html.LabelFor(m => m.UserName, new { @class = "labelFor" })
+							@Html.TextBoxFor(m => m.UserName)
+							@Html.LabelFor(m => m.Password, new { @class = "labelFor" })
+							@Html.PasswordFor(m => m.Password)
+	<input type="submit" value="Log in" />
+}
+
+<p>Forgotten your login details: email <a href="mailto:webmaster@mssadventure.org.au">webmaster@mssadventure.org.au</a></p>
+

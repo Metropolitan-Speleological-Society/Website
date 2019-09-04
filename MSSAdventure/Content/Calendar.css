@@ -1,0 +1,135 @@
+﻿.legend {
+	display: grid;
+	grid-template-columns: 30px 100px 30px 100px 30px 100px 30px 100px;
+	grid-gap: 5px;
+}
+
+.legendImage {
+	padding: 5px;
+}
+
+.legendText {
+	width: 200px;
+}
+
+.calendarTable {
+	table-layout: fixed;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+	.calendarTable thead {
+		background-color: #DDDDDD;
+		text-align: left;
+		padding-left: 5px;
+	}
+
+	.calendarTable th {
+		padding-left: 5px;
+	}
+
+	.calendarTable tbody tr {
+		border-bottom-width: 1px;
+		border-bottom-color: #DDDDDD;
+		border-bottom-style: solid;
+		padding-bottom: 1px;
+		margin-bottom: 1px;
+	}
+
+	.calendarTable img {
+		padding: 2px;
+	}
+
+.calendar-column-date {
+	width: 200px;
+}
+
+.calendar-column-icon {
+	width: 90px;
+}
+
+.calendar-column-grade {
+	width: 100px;
+}
+
+.calendar-column-location {
+	width: 150px;
+}
+
+.proposedTable {
+	table-layout: fixed;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+	.proposedTable thead {
+		background-color: #DDDDDD;
+		text-align: left;
+	}
+
+	.proposedTable th {
+		padding-left: 5px;
+	}
+
+	.proposedTable tbody tr {
+		border-bottom-width: 1px;
+		border-bottom-color: #DDDDDD;
+		border-bottom-style: solid;
+		padding-bottom: 1px;
+		margin-bottom: 1px;
+	}
+
+	.proposedTable img {
+		padding: 2px;
+	}
+
+.proposed-column-date {
+	width: 200px;
+}
+
+.proposed-column-icon {
+	width: 90px;
+}
+
+.proposed-column-grade {
+	width: 100px;
+}
+
+.proposed-column-location {
+	width: 150px;
+}
+
+.gradeTable {
+	table-layout: fixed;
+	width: 500px;
+	border-collapse: collapse;
+}
+
+	.gradeTable thead {
+		background-color: #DDDDDD;
+		text-align: left;
+	}
+
+	.gradeTable th {
+		padding-left: 5px;
+	}
+
+	.gradeTable tbody tr {
+		border-bottom-width: 1px;
+		border-bottom-color: #DDDDDD;
+		border-bottom-style: solid;
+		padding-bottom: 1px;
+		margin-bottom: 1px;
+	}
+
+.grade-table-grade {
+	width: 60px;
+}
+
+.grade-table-required {
+	width: 220px;
+}
+
+.grade-table-may {
+	width: 220px;
+}

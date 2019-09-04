@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+				<img src="~/assets/images/logos/Logo.png" alt="MSS Logo" />
+                @Html.ActionLink("Metropolitan Speleological Society", "Index", "Members", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            @*<div class="navbar-collapse collapse">*@
+			<div>
+				<nav class="menu">
+					<ul>
+						<li>@Html.ActionLink("Home", "Index", "Members")</li>
+						<li>
+							@Html.ActionLink("Resources", "Publications", "Members")
+                            <ul>
+                                <li>@Html.ActionLink("Archived Newsletters", "Newsletters", "Members")</li>
+                                <li>@Html.ActionLink("Trip Leader's Checklist", "LeaderChecklist", "Members")</li>
+                                <li>@Html.ActionLink("Reciprocal Arrangements", "ReciprocalArrangements", "Members")</li>
+                                <li>@Html.ActionLink("50th Ann. Publication", "FiftiethPublication", "Members")</li>
+                                <li>@Html.ActionLink("30th Ann. Publication", "ThirtiethPublication", "Members")</li>
+                                <li>@Html.ActionLink("MSS Constitution", "Constitution", "Members")</li>
+                                <li>@Html.ActionLink("Library Catalogue", "Library", "Members")</li>
+                            </ul>
+						</li>
+						<li>@Html.ActionLink("Membership", "Membership", "Members")</li>
+						<li>@Html.ActionLink("Merchandise", "Merchandise", "Members")</li>
+						<li>@Html.ActionLink("Directions", "Directions", "Members")</li>
+						<li>@Html.ActionLink("Links", "Links", "Members")</li>
+						<li>@Html.ActionLink("Logout", "LogOff", "Members")</li>
+					</ul>
+				</nav>
+			</div>
+        </div>
+		<hr />
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+			<p><a href="https://www.facebook.com/groups/180755365674074/" target="_blank"><img alt="Facebook" src="~/assets/images/logos/Facebook logo.jpg" height="24" width="32" /> Apply to join our Facebook Group</a></p>
+            <p>&copy; @DateTime.Now.Year</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+    @RenderSection("scripts", required: false)
+</body>
+</html>

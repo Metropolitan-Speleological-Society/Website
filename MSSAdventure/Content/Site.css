@@ -1,0 +1,318 @@
+﻿body {
+    padding-top: 140px;
+    padding-bottom: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	height: 100%;
+	font-size: 12px;
+	font-weight: normal;
+	color: #585858;
+	line-height: 18px;
+}
+
+h2 {
+	font-size: 14px;
+	color: #000000;
+}
+
+.navbar {
+	position: relative;
+	z-index: 1000;
+	min-height: 50px;
+	padding-top: 20px;
+	border: 1px solid transparent;
+	background-color: #FFFFFF;
+}
+
+	.navbar:before,
+	.navbar:after {
+		display: table;
+		content: " ";
+	}
+
+	.navbar:after {
+		clear: both;
+	}
+
+	.navbar:before,
+	.navbar:after {
+		display: table;
+		content: " ";
+	}
+
+	.navbar:after {
+		clear: both;
+	}
+
+.navbar-brand {
+	text-decoration: none;
+	font-size: 30px;
+	color: black;
+}
+
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+	position: fixed;
+	right: 0;
+	left: 0;
+	border-width: 0 0 1px;
+}
+
+.navbar-fixed-top {
+	top: 0;
+	z-index: 1030;
+}
+
+.container {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+	width: 970px;
+}
+
+	.container:before,
+	.container:after {
+		display: table;
+		content: " ";
+	}
+
+	.container:after {
+		clear: both;
+	}
+
+	.container:before,
+	.container:after {
+		display: table;
+		content: " ";
+	}
+
+	.container:after {
+		clear: both;
+	}
+
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.nav > li {
+	position: relative;
+	display: block;
+}
+
+	.nav > li > a {
+		position: relative;
+		display: block;
+		padding: 10px 15px;
+		text-decoration: none;
+		color: #585858;
+		font-size: 16px;
+	}
+
+		.nav > li > a:hover,
+		.nav > li > a:focus {
+			text-decoration: none;
+			background-color: #eeeeee;
+		}
+
+	.nav > li.disabled > a {
+		color: #999999;
+	}
+
+		.nav > li.disabled > a:hover,
+		.nav > li.disabled > a:focus {
+			color: #999999;
+			text-decoration: none;
+			cursor: not-allowed;
+			background-color: transparent;
+		}
+
+.nav .open > a,
+.nav .open > a:hover,
+.nav .open > a:focus {
+	background-color: #eeeeee;
+	border-color: #428bca;
+}
+
+@media (min-width: 768px) {
+	.navbar-nav {
+		float: left;
+		margin: 0;
+	}
+
+		.navbar-nav > li {
+			float: left;
+		}
+
+			.navbar-nav > li > a {
+				padding-top: 15px;
+				padding-bottom: 15px;
+			}
+}
+
+@media (min-width: 768px) {
+	.navbar-left {
+		float: left !important;
+	}
+
+	.navbar-right {
+		float: right !important;
+	}
+}
+
+.menu {
+	width: 950px;
+	padding: 0;
+	margin: 0;
+	font-size: 14px;
+}
+
+	.menu ul {
+		padding: 0;
+		margin: 0;
+		height: 40px;
+		list-style-type: none;
+		list-style-position: outside;
+		list-style-image: none;
+	}
+
+	.menu li {
+		float: left;
+		padding: 0 0 0 15px;
+	}
+
+		.menu li a {
+			display: block;
+			font-weight: normal;
+			line-height: 40px;
+			margin: 0;
+			padding: 0 25px;
+			text-align: center;
+			text-decoration: none;
+			color: #585858;
+		}
+
+			.menu li a:hover {
+				text-decoration: none;
+			}
+
+	.menu ul li:hover a {
+		text-decoration: none;
+	}
+
+	.menu li ul {
+		display: none;
+		height: auto;
+		padding: 0;
+		margin: 0;
+		border: 0;
+		position: absolute;
+		width: 200px;
+		z-index: 200;
+	}
+
+	.menu li:hover ul {
+		display: block;
+	}
+
+	.menu li li {
+		display: block;
+		float: none;
+		margin: 0;
+		padding: 0;
+		width: 200px;
+		background: #FFFFFF;
+	}
+
+	.menu li:hover li a {
+		background: none;
+		color: #585858;
+	}
+
+	.menu li ul a {
+		display: block;
+		height: 40px;
+		font-size: 14px;
+		font-style: normal;
+		margin: 0;
+		padding: 0 10px 0 15px;
+		text-align: left;
+	}
+
+		.menu li ul a:hover,
+		.menu li ul li:hover a {
+			border: 0;
+			text-decoration: none;
+		}
+
+.imagewithcaption {
+	text-align: center;
+	font-size: 9px;
+	font-style: italic;
+	float: right;
+	padding: 10px;
+}
+
+.labelFor {
+	width: 200px;
+}
+
+.bannerImg {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+.mySlides {
+    display: none;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+

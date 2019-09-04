@@ -1,0 +1,190 @@
+﻿@model MSSAdventure.Models.CalendarModel
+
+@{
+	ViewBag.Title = "Calendar";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/Calendar.css" rel="stylesheet" type="text/css">
+
+<div class="imagewithcaption">
+	<img src="~/assets/images/features/cathi at Glenrock - 400px.jpg" alt="Caving at Glenrock" /><br />Cathi caving at Glenrock
+</div>
+
+<h2>Calendar</h2>
+
+<p>Check out our upcoming adventures.  You will need to be a member (or trial member).  Trial membership is $30.00 and allows you to participate on MSS trips for 12 months.  Go to the <a href="~/Home/HowToJoin">How to Join</a> page to find out more and email <a href="mailto:membership@mssadventure.org">membership@mssadventure.org</a> for an application form.</p>
+
+<p>
+    MSS leaders collect trip fees (either before or after the activity).   Please make sure you have the money with you on the day.  If you book into an activity with another club, you will be asked to pay the trip fees for that club OR MSS trip fees:
+    <ul>
+        <li>$3:  1 day activity</li>
+        <li>$5:  2 – 4 days (inclusive)</li>
+        <li>$10:  5+ days</li>
+    </ul>
+</p>
+
+<strong>Legend</strong><br />
+<p class="legend">
+	<img class="legendImage" src="~/assets/images/icons/4wd_b.gif" alt="4wd" /><label class="legendText">4wd</label><img class="legendImage" src="~/assets/images/icons/canyon_b.gif" alt="Canyoning" /><label class="legendText">Canyoning</label>
+	<img class="legendImage" src="~/assets/images/icons/cave_b.gif" alt="Caving" /><label class="legendText">Caving</label><img class="legendImage" src="~/assets/images/icons/coffee_b.gif" alt="Social" /><label class="legendText">Social</label>
+	<img class="legendImage" src="~/assets/images/icons/kites_b.gif" alt="Kite flying" /><label class="legendText">Kite flying</label><img class="legendImage" src="~/assets/images/icons/mtb_b.gif" alt="Mountain biking" /><label class="legendText">Mountain biking</label>
+	<img class="legendImage" src="~/assets/images/icons/walk_b.gif" alt="Bushwalking" /><label class="legendText">Bushwalking</label>
+</p>
+<p>&nbsp;</p>
+@*<p>Last updated: 27th October, 2017</p>*@
+
+<table class="calendarTable">
+	<thead>
+		<tr>
+			<th class="calendar-column-date">Dates</th>
+			<th class="calendar-column-icon">&nbsp;</th>
+			<th class="calendar-column-grade">Grade</th>
+			<th class="calendar-column-location">Location</th>
+			<th class="calendar-column-activities">Activities</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var t in Model.Trips)
+		{
+			<tr>
+				<td>@(t.StartDate.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture) + " - " + t.EndDate.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture))</td>
+				<td>
+					@switch (t.Activity.ToLower())
+					{
+						case ("caving"):
+							<img src="~/assets/images/icons/cave_b.gif" alt="Caving" />
+							break;
+						case ("canyoning"):
+							<img src="~/assets/images/icons/canyon_b.gif" alt="Canyoning" />
+							break;
+						case ("social"):
+						case ("meeting"):
+							<img src="~/assets/images/icons/coffee_b.gif" alt="Social" />
+							break;
+						case ("walking"):
+							<img src="~/assets/images/icons/walk_b.gif" alt="Bushwalking" />
+							break;
+						case ("training"):
+							<img src="~/assets/images/icons/learn_b.gif" alt="Training" />
+							break;
+					}
+				</td>
+				<td>@(t.Grade)</td>
+				<td>@(t.GenericLocation)</td>
+				<td>@(t.Notes)</td>
+			</tr>
+		}
+	</tbody>
+</table>
+<p>&nbsp;</p>
+Proposed:
+<table class="proposedTable">
+	<thead>
+		<tr>
+			<th class="proposed-column-date">Dates</th>
+			<th class="proposed-column-icon">&nbsp;</th>
+			<th class="proposed-column-grade">Grade</th>
+			<th class="proposed-column-location">Location</th>
+			<th class="proposed-column-activities">Activities</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>March/April/May 2020</td>
+			<td><img src="~/assets/images/icons/cave_b.gif" alt="Caving" /></td>
+			<td>Easy - Medium</td>
+			<td>Philippines</td>
+            <td>
+                This will be a multifaceted trip. The date will be aligned with the
+                local PSS (Philippines Speleological Society) annual conference which is being
+                held in the very beautiful island of Palawan. This date is still to be confirmed
+                but is likely in the 3rd week of April 2020. Associated with this conference
+                there will be numerous opportunities for trips to the many cave features of
+                this unique island including the Puerto Princesa Subterranean River and
+                stunnnig El Nido. Our group has also been invited to join with a local group to
+                assist in Archeological activities in Tabon cave on behalf of the Philippines
+                Museum. This is a cave where the remain of Tabon man and many other
+                artifacts have been discovered. We have also been invited to another area
+                on a different island to help with exploration of Tipan cave which is a large
+                river system. More details will be posted when they become available.
+            </td>
+		</tr>
+	</tbody>
+</table>
+<p>&nbsp;</p>
+
+<div class="imagewithcaption">
+	<img src="~/assets/images/features/front cover inside_ DS in Grand_John_Gray.jpg" alt="Dave in Grand Canyon" /><br />Dave S in Grand Canyon
+</div>
+
+Guide to trip gradings:
+<table class="gradeTable">
+	<thead>
+		<tr>
+			<th class="grade-column-grade">Grade</th>
+			<th class="grade-column-required">Required</th>
+			<th class="grade-column-may">May involve</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Easy</td>
+			<td>
+				<ul>
+					<li>average fitness</li>
+					<li>sense of humour</li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li>steep walking</li>
+					<li>easy scrambling</li>
+					<li>short swims</li>
+					<li>instructional trips</li>
+					<li>day trips</li>
+					<li>car camping</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>Medium</td>
+			<td>
+				<ul>
+					<li>above average fitness</li>
+					<li>sense of humour</li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li>easy climbing</li>
+					<li>rope work</li>
+					<li>lengthy swims</li>
+					<li>full immersion</li>
+					<li>long days</li>
+					<li>overnight trips</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>Hard</td>
+			<td>
+				<ul>
+					<li>strength and endurance</li>
+					<li>cool disposition</li>
+					<li>sense of ridiculous</li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li>strenuous activity</li>
+					<li>challenging environments</li>
+					<li>prior experience</li>
+					<li>equipment knowledge</li>
+					<li>intimidating exposure</li>
+					<li>remote areas</li>
+				</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>

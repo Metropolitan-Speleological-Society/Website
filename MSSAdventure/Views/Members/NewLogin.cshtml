@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "New Login";
+    Layout = "~/Views/Shared/_MemberLayout.cshtml";
+}
+
+<h2>New Login</h2>
+
+@using (Html.BeginForm("NewLogin", "Members", FormMethod.Post, new { enctype = "multipart/form-data", id = "personForm" }))
+{
+    @:Login:
+    <input type="text" id="txtUserName" name="userName" />
+    <input type="submit" value="OK" />
+}

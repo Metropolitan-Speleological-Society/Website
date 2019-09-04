@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="slideshow-container">
+    <div class="mySlides">
+        <img src="~/assets/images/banners/dirk 4250-960x250px.jpg" class="bannerImg" style="width:100%" />
+    </div>
+
+    <div class="mySlides">
+        <img src="~/assets/images/banners/nat 237-960x250px.jpg" class="bannerImg" style="width:100%" />
+    </div>
+
+    <div class="mySlides">
+        <img src="~/assets/images/banners/P1050611.jpg" class="bannerImg" style="width:100%" />
+    </div>
+
+    <div class="mySlides">
+        <img src="~/assets/images/banners/P1120073.jpg" class="bannerImg" style="width:100%" />
+    </div>
+
+    <div class="mySlides">
+        <img src="~/assets/images/banners/P4150045.jpg" class="bannerImg" style="width:100%" />
+    </div>
+
+    <div class="mySlides">
+        <img src="~/assets/images/banners/P4180303.jpg" class="bannerImg" style="width:100%" />
+    </div>
+
+    <div class="mySlides">
+        <img src="~/assets/images/banners/P4200669.jpg" class="bannerImg" style="width:100%" />
+    </div>
+</div>
+
+<div class="imagewithcaption" style="float: right;">
+    <img src="~/assets/images/features/spider.png" alt="Tasmanian Cave Spider" /><br />2019 Cave Animal of the Year -<br />Tasmanian Cave Spider (Hickmania<br />troglodytes)
+</div>
+
+<h2>MSS – you’ve found the portal to a new life!</h2>
+
+<p>MSS is all about adventure in every sense of the word … squeezing through narrow limestone passages, abseiling into the deep, exploring unknown canyons, striking new paths through the bush or enjoying the luxury of a fine meal at a remote campsite - we're up for pretty much anything.</p>
+<p>Adventure, however, is not always about the challenge. For MSS members, it is about sharing experiences with friends - it is often who you are with that makes the adventure even better. We pride ourselves on being a friendly club … welcoming everyone - from the tough-as-nails explorer to families with young children.</p>
+<p>So, <b>are you ready for adventure, are you up to the challenge?</b> If so, check out the upcoming adventures on our calendar and @Html.ActionLink("Contact Us", "Contact", "Home") now!</p>
+
+<script type="text/javascript">
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1 }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 4000); // Change image every 4 seconds
+    }
+</script>

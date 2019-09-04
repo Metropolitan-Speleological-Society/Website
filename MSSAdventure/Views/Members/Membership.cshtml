@@ -1,0 +1,19 @@
+﻿@model MSSAdventure.Models.MemberIndexModel
+
+@{
+    ViewBag.Title = "Membership";
+    Layout = "~/Views/Shared/_MemberLayout.cshtml";
+}
+
+<h2>Membership</h2>
+
+@if (Model.CanCreateMember)
+{
+    @Html.ActionLink("Create User", "NewMember", "Members")<br />
+}
+@if (Model.CanCreateTrip)
+{
+    @Html.ActionLink("Create Trip", "UpdateTripDetails", "Members")<br />
+}
+
+@Html.Partial("_MemberList", Model.memberList)
